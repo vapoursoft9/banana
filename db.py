@@ -12,7 +12,7 @@ while True:
     headers = request.split('\n')
     try: filename = headers[0].split()[1]
     except: filename = ""
-    with open("db.txt", 'w') as file:
+    with open("db.txt", 'a') as file:
        file.write(filename[1: len(filename)+1])
     r = open("db.txt")
     response = 'HTTP/1.0 200 OK\n\n' + r.read()
