@@ -7,3 +7,4 @@
 <p>This database was made in a day.</p>
 <p>Comands are r you remove the number location of a value removing the value, a you add a value to the database.</p>
 <p>The command is is a sepcial comand because you have the number location, then add a % with the value you want to swap the locations value out with.</p>
+<p>This was built in python 3.11.</p>
