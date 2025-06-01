@@ -5,5 +5,4 @@
 <p>To use this curl the url with the ip, and port, then add /%, and after that add the content(a word only) you want to add to the data base.</p>
 <p>How you can help is by forking this repo to make your own better databases.</p>
 <p>This database was made in a day</p>
-<p>Chatgpt helped me with the styling.</p>
-<link rel="stylesheet" href="style.css">
+<p></p>
