@@ -13,10 +13,25 @@ while True:
     try: filename = headers[0].split()[1]
     except: filename = ""
     mf = filename.split("%")
-    if len(mf) == 2:
-        with open("db.txt", 'a') as file:
-           file.write(mf[1])
     r = open("db.txt")
+    if len(mf) == 2 or len(mf) == 3:
+        if mf[0] == "a":
+           with open("db.txt", 'a') as file:
+               if len(r.read()) == 0: file.write(mf[1])
+               else: file.write(" "+mf[1])
+        elif mf[0] == "r":
+           with open("db.txt", 'w') as file:
+               x = r.read()
+               m = x.split()
+               m.pop(int(mf[1]))
+               file.write(" ".join(m))
+        elif mf[0] == "s":
+           with open("db.txt", 'w') as file:
+               x = r.read()
+               m = x.split()
+               m[int(mf[1])] = mf[3]
+               file.write(" ".join(m))
+        else: pass
     response = 'HTTP/1.0 200 OK\n\n' + r.read()
     client_connection.sendall(response.encode())
     client_connection.close()
