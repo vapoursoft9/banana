@@ -29,7 +29,7 @@ while True:
            with open("db.txt", 'w') as file:
                x = r.read()
                m = x.split()
-               m[int(mf[1])] = mf[2]
+               exec(f'm[{mf[1]}] = "{mf[2]}"')
                file.write(" ".join(m))
         else: pass
     response = 'HTTP/1.0 200 OK\n\n' + r.read()
