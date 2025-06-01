@@ -6,3 +6,4 @@
 <p>How you can help is by forking this repo to make your own better databases.</p>
 <p>This database was made in a day</p>
 <p>Chatgpt helped me with the styling.</p>
+<link rel="stylesheet" href="style.css">
