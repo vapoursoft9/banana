@@ -12,27 +12,8 @@ while True:
     headers = request.split('\n')
     try: filename = headers[0].split()[1]
     except: filename = ""
-    mf = filename.split("%")
-    r = open("db.txt")
-    if len(mf) == 2 or len(mf) == 3:
-        if mf[0] == "/a":
-           with open("db.txt", 'a') as file:
-               if len(r.read()) == 0: file.write(mf[1])
-               else: file.write(" "+mf[1])
-        elif mf[0] == "/r":
-           with open("db.txt", 'w') as file:
-               x = r.read()
-               m = x.split()
-               m.pop(int(mf[1]))
-               file.write(" ".join(m))
-        elif mf[0] == "/s":
-           with open("db.txt", 'w') as file:
-               x = r.read()
-               m = x.split()
-               exec(f'm[{mf[1]}] = "{mf[2]}"')
-               file.write(" ".join(m))
-        else: pass
-    response = 'HTTP/1.0 200 OK\n\n' + r.read()
+    with open("db.txt", 'w') as file: file.write(filename[1: len(filename)+1])
+    response = 'HTTP/1.0 200 OK\n\n' + filename[1: len(filename)+1]
     client_connection.sendall(response.encode())
     client_connection.close()
 server_socket.close()
